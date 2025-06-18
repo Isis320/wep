@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto Integradora Interactivo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-size: 600% 600%;
+      animation: fondoGradual 20s ease infinite;
+      transition: background-color 1s;
+    }
+
+    @keyframes fondoGradual {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      font-size: 2.5em;
+      animation: moverTitulo 3s infinite alternate;
+    }
+
+    @keyframes moverTitulo {
+      0% { transform: translateX(-10px); }
+      100% { transform: translateX(10px); }
+    }
+
+    .explicacion {
+      font-size: 1.2em;
+      margin: 20px auto;
+      max-width: 800px;
+      color: #333;
+      background-color: #fff8f9;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .boton, .link {
+      display: inline-block;
+      margin: 20px 10px;
+      padding: 12px 25px;
+      background-color: #6c63ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+
+    .boton:hover, .link:hover {
+      background-color: #483d8b;
+      transform: scale(1.05);
+    }
+
+    .seccion {
+      display: none;
+    }
+
+    .activa {
+      display: block;
+    }
+
+    iframe {
+      border: 3px solid #3498db;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background-color: #6c63ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      font-size: 16px;
+    }
+
+    .links a:hover {
+      background-color: #483d8b;
+      transform: scale(1.08);
+    }
+
+    .letter {
+      background-color: #fffaf0;
+      border: 2px solid #d8bfd8;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      box-shadow: 2px 2px 10px #ccc;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #2f4f4f;
+      margin-bottom: 10px;
+    }
+
+    .marquee {
+      background-color: #d8bfd8;
+      padding: 10px;
+      font-size: 24px;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sección 1: Presentación -->
+  <div id="seccion1" class="seccion activa">
+    <h1>🎉 Welcome to My Integradora Project! 🎉</h1>
+    <div class="explicacion">
+      Discover my best academic projects from every subject!<br>
+      Explore, learn, and get inspired by my work in English, Philosophy, Law, History, and Math.
+    </div>
+    <div class="links">
+      <a href="curriculum.html" target="_blank">📄 My Curriculum</a>
+      <a href="ingles.html" target="_blank">💅 Magazine</a>
+    </div>
+    <span class="boton" onclick="mostrarSeccion('seccion2')">Siguiente</span>
+    <span class="boton" onclick="mostrarSeccion('seccion5')">Cartas 📬</span>
+  </div>
+
+  <!-- Sección 2: Filosofía -->
+  <div id="seccion2" class="seccion">
+    <h1 style="color: #c2185b;">Identidad Mexicana según Samuel Ramos</h1>
+    <div class="explicacion">
+      Samuel Ramos fue un filósofo mexicano que reflexionó sobre la psicología del mexicano. En su obra, destacó cómo la identidad nacional ha sido influida por sentimientos de inferioridad frente a otras culturas. Propuso que entender nuestras raíces y valores nos ayuda a construir una identidad auténtica.
+    </div>
+    <a class="link" href="https://vt.tiktok.com/ZSkgM8U8o/" target="_blank">Ver video en TikTok</a><br>
+    <span class="boton" onclick="mostrarSeccion('seccion1')">Volver</span>
+    <span class="boton" onclick="mostrarSeccion('seccion3')">Siguiente</span>
+  </div>
+
+  <!-- Sección 3: Matemáticas -->
+  <div id="seccion3" class="seccion">
+    <h1 style="color: #2e7d32;">Integral Definida</h1>
+    <div class="explicacion">
+      En este video se explica de forma clara y sencilla cómo resolver una integral definida paso a paso. Ideal para estudiantes que están comenzando en el cálculo.
+    </div>
+    <a class="link" href="https://vt.tiktok.com/ZSkgB3m7M/" target="_blank">Ver video en TikTok</a><br>
+    <span class="boton" onclick="mostrarSeccion('seccion2')">Volver</span>
+    <span class="boton" onclick="mostrarSeccion('seccion4')">Siguiente</span>
+  </div>
+
+  <!-- Sección 4: Juego -->
+  <div id="seccion4" class="seccion">
+    <h1 style="color: #2c3e50;">🧠 Juego Interactivo: Búsqueda de Palabras - Neoliberalismo</h1>
+    <div class="explicacion">
+      El <strong>neoliberalismo</strong> es una corriente económica y política que promueve la reducción del papel del Estado en la economía, defendiendo la libre competencia, la privatización de empresas públicas, la desregulación de los mercados y la apertura al comercio internacional. Surgió con fuerza en los años 80 con figuras como Margaret Thatcher y Ronald Reagan.
+    </div>
+    <iframe allowfullscreen width="795" height="690" frameborder="0"
+      src="https://es.educaplay.com/juego/24309729-busqueda_de_palabras_neoliberalismo.html"></iframe><br>
+    <span class="boton" onclick="mostrarSeccion('seccion3')">Volver</span>
+    <span class="boton" onclick="mostrarSeccion('seccion1')">Inicio</span>
+  </div>
+
+  <!-- Sección 5: Cartas -->
+  <div id="seccion5" class="seccion">
+    <h1 style="color: #4b0082;">Formal and Informal Letters</h1>
+    <div class="explicacion">
+      <div class="marquee">
+        <marquee>Formal and Informal Letters by Isis Celeste Zuñiga Hernández</marquee>
+      </div>
+
+      <div class="letter">
+        <div class="label">📨 Formal Letter:</div>
+        <p>To: Real Estate Agent<br>
+        Avenida del Sol No. 45<br>
+        Col. Lomas de Reforma, Mexico City<br>
+        7131295183</p>
+
+        <p>Subject: Intent to Purchase Property</p>
+
+        <p>Dear Sr. Angela Estefania Huesino Gsmit,</p>
+
+        <p>I hope this letter finds you well. I am writing to formally express my interest in purchasing a property within the Mexico City housing area...</p>
+
+        <p>Sincerely,<br>
+        Isis Celeste Zuñiga Hernández</p>
+      </div>
+
+      <div class="letter">
+        <div class="label">💌 Informal Letter:</div>
+        <p>Dear: Ma Isabel Ortiz Hernández,</p>
+
+        <p>I hope you're doing well! I've been having some fun right around because I found a nice place and I look forward to sharing your recipe for tacos 🌮. I love how amazing your cooking is. Do you know how to cook enchiladas too?</p>
+
+        <p>Thank you so much, and I look forward to hearing from you!<br>
+        Warmly,<br>
+        Isis Celeste Zuñiga Hernández</p>
+      </div>
+    </div>
+    <span class="boton" onclick="mostrarSeccion('seccion1')">Inicio</span>
+  </div>
+
+  <script>
+    function mostrarSeccion(id) {
+      document.querySelectorAll('.seccion').forEach(seccion => seccion.classList.remove('activa'));
+      document.getElementById(id).classList.add('activa');
+
+      if (id === 'seccion1') {
+        document.body.style.background = 'linear-gradient(-45deg, #fef3f3, #e0f7fa, #e7ffe7, #fff0db)';
+      } else if (id === 'seccion2') {
+        document.body.style.backgroundColor = '#fcdde1';
+      } else if (id === 'seccion3') {
+        document.body.style.backgroundColor = '#d2f8d2';
+      } else if (id === 'seccion4') {
+        document.body.style.backgroundColor = '#ffe4e1';
+      } else if (id === 'seccion5') {
+        document.body.style.backgroundColor = '#ffe4e1';
+      }
+    }
+  </script>
+
+</body>
+</html>
