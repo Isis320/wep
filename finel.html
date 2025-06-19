@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto Integradora Interactivo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-size: 600% 600%;
+      animation: fondoGradual 20s ease infinite;
+      transition: background-color 1s;
+    }
+
+    @keyframes fondoGradual {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      font-size: 2.5em;
+      animation: moverTitulo 3s infinite alternate;
+    }
+
+    @keyframes moverTitulo {
+      0% { transform: translateX(-10px); }
+      100% { transform: translateX(10px); }
+    }
+
+    .explicacion {
+      font-size: 1.2em;
+      margin: 20px auto;
+      max-width: 800px;
+      color: #333;
+      background-color: #fff8f9;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .boton, .link {
+      display: inline-block;
+      margin: 20px 10px;
+      padding: 12px 25px;
+      background-color: #6c63ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+
+    .boton:hover, .link:hover {
+      background-color: #483d8b;
+      transform: scale(1.05);
+    }
+
+    .seccion {
+      display: none;
+    }
+
+    .activa {
+      display: block;
+    }
+
+    iframe {
+      border: 3px solid #3498db;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background-color: #6c63ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      font-size: 16px;
+    }
+
+    .links a:hover {
+      background-color: #483d8b;
+      transform: scale(1.08);
+    }
+
+    .letter {
+      background-color: #fffaf0;
+      border: 2px solid #d8bfd8;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      box-shadow: 2px 2px 10px #ccc;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #2f4f4f;
+      margin-bottom: 10px;
+    }
+
+    .marquee {
+      background-color: #d8bfd8;
+      padding: 10px;
+      font-size: 24px;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .resume-container {
+      width: 70%;
+      margin: 20px auto;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    .resume-header {
+      display: flex;
+      align-items: center;
+      background-color: #e0eafc;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .resume-header img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin-right: 20px;
+    }
+
+    .resume-header h1 {
+      margin: 0;
+      color: #2c3e50;
+    }
+
+    .resume-header p {
+      margin: 5px 0 0;
+      color: #7f8c8d;
+    }
+
+    .resume-section {
+      margin: 20px 0;
+    }
+
+    .resume-section h2 {
+      border-bottom: 2px solid #e0eafc;
+      padding-bottom: 5px;
+      color: #3498db;
+    }
+
+    .resume-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .resume-section ul li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .resume-section ul li:before {
+      content: "•";
+      color: #6c63ff;
+      font-size: 20px;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+
+    .resume-link {
+      color: #6c63ff;
+      text-decoration: none;
+    }
+
+    .resume-link:hover {
+      text-decoration: underline;
+    }
+
+    .imagen-derecho {
+      width: 45%;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sección 1: Presentación -->
+  <div id="seccion1" class="seccion activa">
+    <h1>🎉 Welcome to My Integradora Project! 🎉</h1>
+    <div class="explicacion">
+      Discover my best academic projects from every subject!<br>
+      Explore, learn, and get inspired by my work in English, Philosophy, Law, History, and Math.
+    </div>
+    <div class="links">
+      <a class="link" onclick="mostrarSeccion('seccion6')">📄 My Curriculum</a>
+      <a href="ingles.html" target="_blank">💅 Magazine</a>
+      <a class="link" onclick="mostrarSeccion('seccion7')">📸 Imagen Derecho</a>
+    </div>
+    <span class="boton" onclick="mostrarSeccion('seccion2')">Siguiente</span>
+    <span class="boton" onclick="mostrarSeccion('seccion5')">Cartas 📬</span>
+  </div>
+
+  <!-- Sección 2: Filosofía -->
+  <div id="seccion2" class="seccion">
+    <h1 style="color: #c2185b;">Identidad Mexicana según Samuel Ramos</h1>
+    <div class="explicacion">
+      Samuel Ramos fue un filósofo mexicano que reflexionó sobre la psicología del mexicano...
+    </div>
+    <a class="link" href="https://vt.tiktok.com/ZSkgM8U8o/" target="_blank">Ver video en TikTok</a><br>
+    <span class="boton" onclick="mostrarSeccion('seccion1')">Volver</span>
+    <span class="boton" onclick="mostrarSeccion('seccion3')">Siguiente</span>
+  </div>
+
+  <!-- Sección 3: Matemáticas -->
+  <div id="seccion3" class="seccion">
+    <h1 style="color: #2e7d32;">Integral Definida</h1>
+    <div class="explicacion">
+      En este video se explica cómo resolver una integral definida paso a paso...
+    </div>
+    <a class="link" href="https://vt.tiktok.com/ZSkgB3m7M/" target="_blank">Ver video en TikTok</a><br>
+    <span class="boton" onclick="mostrarSeccion('seccion2')">Volver</span>
+    <span class="boton" onclick="mostrarSeccion('seccion4')">Siguiente</span>
+  </div>
+
+  <!-- Sección 4: Juego -->
+  <div id="seccion4" class="seccion">
+    <h1 style="color: #2c3e50;">🧠 Juego Interactivo: Búsqueda de Palabras - Neoliberalismo</h1>
+    <div class="explicacion">
+      El <strong>neoliberalismo</strong> es una corriente que defiende la libre competencia...
+    </div>
+    <iframe allowfullscreen width="795" height="690" frameborder="0"
+      src="https://es.educaplay.com/juego/24309729-busqueda_de_palabras_neoliberalismo.html"></iframe><br>
+    <span class="boton" onclick="mostrarSeccion('seccion3')">Volver</span>
+    <span class="boton" onclick="mostrarSeccion('seccion1')">Inicio</span>
+  </div>
+
+  <!-- Sección 5: Cartas -->
+  <div id="seccion5" class="seccion">
+    <h1 style="color: #4b0082;">Formal and Informal Letters</h1>
+    <div class="explicacion">
+      <div class="marquee">
+        <marquee>Formal and Informal Letters by Isis Celeste Zuñiga Hernández</marquee>
+      </div>
+
+      <div class="letter">
+        <div class="label">📨 Formal Letter:</div>
+        <p>To: Real Estate Agent<br>
+        Avenida del Sol No. 45<br>
+        Col. Lomas de Reforma, Mexico City<br>
+        7131295183</p>
+
+        <p>Subject: Intent to Purchase Property</p>
+
+        <p>Dear Sr. Angela Estefania Huesino Gsmit,</p>
+
+        <p>I hope this letter finds you well. I am writing to formally express my interest in purchasing a property within the Mexico City housing area. I have reviewed several listings on your website and found one that meets all my requirements. I would appreciate it if we could schedule a visit soon. Please contact me at your earliest convenience.</p>
+
+        <p>Sincerely,<br>
+        Isis Celeste Zuñiga Hernández</p>
+      </div>
+
+      <div class="letter">
+        <div class="label">💌 Informal Letter:</div>
+        <p>Dear: Ma Isabel Ortiz Hernández,</p>
+
+        <p>I hope you're doing well! I've been having some fun right around because I found a nice place and I look forward to sharing your recipe for tacos 🌮. I love how amazing your cooking is. Do you know how to cook enchiladas too?</p>
+
+        <p>Thank you so much, and I look forward to hearing from you!<br>
+        Warmly,<br>
+        Isis Celeste Zuñiga Hernández</p>
+      </div>
+    </div>
+    <span class="boton" onclick="mostrarSeccion('seccion1')">Inicio</span>
+  </div>
+
+  <!-- Sección 6: Curriculum -->
+  <div id="seccion6" class="seccion">
+    <h1 style="color: #2c3e50;">📄 My Curriculum</h1>
+    <div class="resume-container">
+      <div class="resume-header">
+        <img src="https://via.placeholder.com/100" alt="Profile photo">
+        <div>
+          <h1>Isis Celeste Zuñiga Hernandez</h1>
+          <p>High School Student Interested in Marketing</p>
+        </div>
+      </div>
+      <div class="resume-section contact-info">
+        <h2>Contact</h2>
+        <ul>
+          <li><strong>Phone:</strong> 7732011760</li>
+          <li><strong>Email:</strong> <a class="resume-link" href="mailto:Isiscelestehernandez@gmail.com">Isiscelestehernandez@gmail.com</a></li>
+          <li><strong>Location:</strong> <a class="resume-link" href="https://maps.app.goo.gl/kEZNLxHFpn8ubvzJ6" target="_blank">View location</a></li>
+        </ul>
+      </div>
+      <div class="resume-section skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>Computer literacy</li>
+          <li>Specialized knowledge in marketing</li>
+          <li>Effective communication</li>
+          <li>Leadership</li>
+          <li>Problem-solving</li>
+        </ul>
+      </div>
+      <div class="resume-section education">
+        <h2>Education</h2>
+        <ul>
+          <li><strong>Currently in High School</strong> - Sixth semester</li>
+        </ul>
+      </div>
+      <div class="resume-section experience">
+        <h2>Work Experience</h2>
+        <ul>
+          <li><strong>Manager - Tienda Daniel</strong><br>Duration: 1 year and a half</li>
+          <li><strong>Manager - Tienda Buenos Aires</strong><br>Duration: 1 year</li>
+        </ul>
+      </div>
+      <div class="resume-section about">
+        <h2>About Me</h2>
+        <p>
+          I am a high school student with an interest in the field of marketing...
+        </p>
+      </div>
+    </div>
+    <span class="boton" onclick="mostrarSeccion('seccion1')">Inicio</span>
+  </div>
+
+  <!-- Sección 7: Imagen Derecho -->
+  <div id="seccion7" class="seccion">
+    <h1 style="color: #8b0000;">📸 Imágenes de Derecho</h1>
+    <div class="explicacion">
+      Observa estas imágenes relacionadas con el área de Derecho.
+    </div>
+    <img src="derecho1.jpg" alt="Imagen Derecho 1" class="imagen-derecho">
+    <img src="derecho2.jpg" alt="Imagen Derecho 2" class="imagen-derecho">
+    <br>
+    <span class="boton" onclick="mostrarSeccion('seccion1')">Inicio</span>
+  </div>
+
+  <!-- Script de navegación -->
+  <script>
+    function mostrarSeccion(id) {
+      document.querySelectorAll('.seccion').forEach(seccion => seccion.classList.remove('activa'));
+      document.getElementById(id).classList.add('activa');
+
+      if (id === 'seccion1') {
+        document.body.style.background = 'linear-gradient(-45deg, #fef3f3, #e0f7fa, #e7ffe7, #fff0db)';
+      } else if (id === 'seccion2') {
+        document.body.style.backgroundColor = '#fcdde1';
+      } else if (id === 'seccion3') {
+        document.body.style.backgroundColor = '#d2f8d2';
+      } else if (id === 'seccion4') {
+        document.body.style.backgroundColor = '#ffe4e1';
+      } else if (id === 'seccion5') {
+        document.body.style.backgroundColor = '#ffe4e1';
+      } else if (id === 'seccion6') {
+        document.body.style.backgroundColor = '#e0f7fa';
+      } else if (id === 'seccion7') {
+        document.body.style.backgroundColor = '#f9f0ff';
+      }
+    }
+  </script>
+
+</body>
+</html>
